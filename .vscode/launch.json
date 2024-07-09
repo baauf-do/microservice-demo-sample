@@ -3,25 +3,32 @@
   "version": "0.2.0",
   "compounds": [
     {
-      "name": "Run All Solutions",
+      "name": "RUN ALL APIS SERVICES",
       "configurations": [
-        "CartMicroservice",
+        "Basket.API",
+        "Customer.API",
+        "Hangfire.API",
+        "Inventory.API",
+        "Ordering.API",
+        "Product.API"
       ]
     }
   ],
   "configurations": [
+    /// Basket.API
     {
-      "name": "CartMicroservice",
+      "name": "Basket.API",
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/src/microservices/CartMicroservice/bin/Debug/net8.0/CartMicroservice.dll",
+      "program": "${workspaceFolder}/src/services/Basket/Basket.API/bin/Debug/net8.0/Basket.API.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/src/microservices/CartMicroservice",
+      "cwd": "${workspaceFolder}/src/services/Basket/Basket.API",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",
-        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s/swagger"
       },
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development"
@@ -29,13 +36,185 @@
       "sourceFileMap": {
         "/Views": "${workspaceFolder}/Views"
       },
-      // "enableStepFiltering": false,
-      // "requireExactSource": false,
-      // "suppressJITOptimizations": true,
-      // "logging": {
-      //   "moduleLoad": false
-      // },
+      "enableStepFiltering": false,
+      "requireExactSource": false,
+      "suppressJITOptimizations": true,
+      "logging": {
+        "moduleLoad": false
+      },
+      "justMyCode": true
+    },
+    // Customer.API
+    {
+      "name": "Customer.API",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/services/Customer/Customer.API/bin/Debug/net8.0/Customer.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/services/Customer/Customer.API",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s/swagger"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "enableStepFiltering": false,
+      "requireExactSource": false,
+      "suppressJITOptimizations": true,
+      "logging": {
+        "moduleLoad": false
+      },
+      "justMyCode": true
+    },
+    /// Hangfire.API
+    {
+      "name": "Hangfire.API",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/services/Hangfire/Hangfire.API/bin/Debug/net8.0/Hangfire.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/services/Hangfire/Hangfire.API",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s/swagger"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "enableStepFiltering": false,
+      "requireExactSource": false,
+      "suppressJITOptimizations": true,
+      "logging": {
+        "moduleLoad": false
+      },
+      "justMyCode": true
+    },
+    /// Inventory.API
+    {
+      "name": "Inventory.API",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/services/Inventory/Inventory.API/bin/Debug/net8.0/Inventory.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/services/Inventory/Inventory.API",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s/swagger"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "enableStepFiltering": false,
+      "requireExactSource": false,
+      "suppressJITOptimizations": true,
+      "logging": {
+        "moduleLoad": false
+      },
+      "justMyCode": true
+    },
+    /// Ordering.API
+    {
+      "name": "Ordering.API",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/services/Ordering/Ordering.API/bin/Debug/net8.0/Ordering.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/services/Ordering/Ordering.API",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s/swagger"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "enableStepFiltering": false,
+      "requireExactSource": false,
+      "suppressJITOptimizations": true,
+      "logging": {
+        "moduleLoad": false
+      },
+      "justMyCode": true
+    },
+    /// Product.API
+    {
+      "name": "Product.API",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/services/Product/Product.API/bin/Debug/net8.0/Product.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/services/Product/Product.API",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s/swagger"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      },
+      "enableStepFiltering": false,
+      "requireExactSource": false,
+      "suppressJITOptimizations": true,
+      "logging": {
+        "moduleLoad": false
+      },
       "justMyCode": true
     }
+    // {
+    //   "name": "CartMicroservice",
+    //   "type": "coreclr",
+    //   "request": "launch",
+    //   "preLaunchTask": "build",
+    //   "program": "${workspaceFolder}/src/microservices/CartMicroservice/bin/Debug/net8.0/CartMicroservice.dll",
+    //   "args": [],
+    //   "cwd": "${workspaceFolder}/src/microservices/CartMicroservice",
+    //   "stopAtEntry": false,
+    //   "serverReadyAction": {
+    //     "action": "openExternally",
+    //     "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+    //   },
+    //   "env": {
+    //     "ASPNETCORE_ENVIRONMENT": "Development"
+    //   },
+    //   "sourceFileMap": {
+    //     "/Views": "${workspaceFolder}/Views"
+    //   },
+    //   // "enableStepFiltering": false,
+    //   // "requireExactSource": false,
+    //   // "suppressJITOptimizations": true,
+    //   // "logging": {
+    //   //   "moduleLoad": false
+    //   // },
+    //   "justMyCode": true
+    // }
   ]
 }

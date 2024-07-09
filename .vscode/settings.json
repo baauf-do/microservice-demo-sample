@@ -54,7 +54,12 @@
     "html"
   ],
   "dotnet.defaultSolution": "store.sln",
-  "cSpell.words": [],
+  "cSpell.words": [
+    "appsettings",
+    "ASPNETCORE",
+    "clean",
+    "weatherforecast"
+  ],
   "dotnet.preferRuntimeFromSDK": true,
   "editor.linkedEditing": true
 }
