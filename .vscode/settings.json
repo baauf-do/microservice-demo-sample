@@ -1,0 +1,60 @@
+{
+  "workbench.colorTheme": "Dracula",
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.iconTheme": "vscode-icons",
+  "git.autofetch": true,
+  "eslint.nodeEnv": "",
+  "redhat.telemetry.enabled": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.renderWhitespace": "all",
+  "editor.formatOnType": true,
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.guides.indentation": true,
+  "workbench.list.multiSelectModifier": "alt",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "git.openRepositoryInParentFolders": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    ".eslintrc.cjs": "javascript"
+  },
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": [
+    "vue",
+    "javascript",
+    "javascriptreact",
+    "html"
+  ],
+  "dotnet.defaultSolution": "store.sln",
+  "cSpell.words": [],
+  "dotnet.preferRuntimeFromSDK": true,
+  "editor.linkedEditing": true
+}
