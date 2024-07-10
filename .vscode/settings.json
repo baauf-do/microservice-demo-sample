@@ -57,7 +57,11 @@
   "cSpell.words": [
     "appsettings",
     "ASPNETCORE",
+    "AVERYTOPSECRET",
     "clean",
+    "Hmac",
+    "Serilog",
+    "Serilogger",
     "weatherforecast"
   ],
   "dotnet.preferRuntimeFromSDK": true,
