@@ -21,34 +21,49 @@ namespace Product.API.Controllers
             _logger = logger;
         }
 
+        //private static int count = 0;
+
         [HttpGet]
         [Authorize]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task<ActionResult<IEnumerable<WeatherForecast>>> Get()
         {
+            // count++;
+            // Console.WriteLine($"get... {count}");
+            // //if (count % 2 == 1)
+            // if (count < 3)
+            // {
+            //     Thread.Sleep(5000);
+            // }
+
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var result = Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+
+            await Task.CompletedTask;
+            return Ok(result);
         }
 
         [HttpPost]
         [Authorize]
-        public IActionResult Post()
+        public async Task<ActionResult> Post()
         {
             var rng = new Random();
             var result = "Datetime: " + DateTime.UtcNow.ToString() + "; Lucky number: " + rng.Next(0, 99);
 
+            await Task.CompletedTask;
             return Ok(result);
         }
 
         [HttpPut("{id}")]
         [Authorize]
-        public IActionResult Put(string id)
+        public async Task<ActionResult> Put(string id)
         {
+            await Task.CompletedTask;
             return Ok(id);
         }
     }
