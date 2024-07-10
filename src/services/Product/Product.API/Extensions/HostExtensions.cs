@@ -1,3 +1,4 @@
+using Infrastructure.Middlewares;
 using Microsoft.AspNetCore.HttpOverrides;
 
 namespace Product.API.Extensions
@@ -15,8 +16,12 @@ namespace Product.API.Extensions
         {
             // add configuration read file settings ... .json
             builder.ConfigureAddAppConfigurations();
+            builder.Services.ConfigureAddConfigurationSettings(builder.Configuration);
             builder.Services.ConfigureAddInfrastructure(builder.Configuration);
+            builder.Services.ConfigureAddInfrastructureServices();
+            builder.Host.ConfigureSerilog(builder);
 
+            builder.Services.ConfigureAddJwtAuthentication();
             // definition swagger
             builder.Services.ConfigureSwagger();
 
@@ -44,14 +49,16 @@ namespace Product.API.Extensions
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{app.Environment.ApplicationName} v1");
             });
 
-            // uncomment if you want to add a UI
-            app.UseStaticFiles();
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.All
             });
 
+            app.UseMiddleware<ErrorWrappingMiddleware>();
+
+            app.UseAuthentication();
             app.UseRouting();
+            app.UseAuthorization();
 
             //set cookie policy before authentication/authorization setup
             app.UseCookiePolicy();
