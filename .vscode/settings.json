@@ -59,7 +59,9 @@
     "ASPNETCORE",
     "AVERYTOPSECRET",
     "clean",
+    "Datetime",
     "Hmac",
+    "Newtonsoft",
     "Serilog",
     "Serilogger",
     "weatherforecast"
