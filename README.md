@@ -22,6 +22,19 @@ There are three microservices:
 - [microservices-source](https://github.com/aelassas/microservices)
 
 
+## Urls / Ports of services
+
+|Service Source     |Port http (Development)        |Port http (Local/Docker)         |Port http (Production)         |
+| ----------------- | ----------------------------- | ------------------------------- | ----------------------------- |
+|                                                                                                                     |
+|Product.API        |[5002](http://localhost:5002)  |[6002](http://product.api:6002)  |[5002](http://:5002)           |
+|Customer.API       |[5003](http://localhost:5003)  |[6003](http://customer.api:6003) |[5003](http://:5003)           |
+|Basket.API         |[5004](http://localhost:5004)  |[6004](http://basket.api:6004)   |[5004](http://:5004)           |
+|Ordering.API       |[5005](http://localhost:5005)  |[6005](http://ordering.api:6005) |[5005](http://:5005)           |
+|Inventory.API      |[5006](http://localhost:5006)  |[6006](http://inventory.api:6006)|[5006](http://:5006)           |
+|                                                                                                                     |
+
+
 
 # Further Reading
 

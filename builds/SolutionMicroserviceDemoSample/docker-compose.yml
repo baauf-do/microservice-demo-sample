@@ -1,0 +1,149 @@
+#version: "3.9"
+
+services:
+  # mongo:
+  #   image: mongo
+  #   ports:
+  #     - 27017:27017
+
+  # catalog:
+  #   build:
+  #     context: .
+  #     dockerfile: src/microservices/CatalogMicroservice/Dockerfile
+  #   depends_on:
+  #     - mongo
+  #   ports:
+  #     - 44326:80
+
+  # cart:
+  #   build:
+  #     context: .
+  #     dockerfile: src/microservices/CartMicroservice/Dockerfile
+  #   depends_on:
+  #     - mongo
+  #   ports:
+  #     - 44388:80
+
+  # identity:
+  #   build:
+  #     context: .
+  #     dockerfile: src/microservices/IdentityMicroservice/Dockerfile
+  #   depends_on:
+  #     - mongo
+  #   ports:
+  #     - 44397:80
+
+  # frontendgw:
+  #   build:
+  #     context: .
+  #     dockerfile: src/gateways/FrontendGateway/Dockerfile
+  #   depends_on:
+  #     - mongo
+  #     - catalog
+  #     - cart
+  #     - identity
+  #   ports:
+  #     - 44300:80
+
+  # backendgw:
+  #   build:
+  #     context: .
+  #     dockerfile: src/gateways/BackendGateway/Dockerfile
+  #   depends_on:
+  #     - mongo
+  #     - catalog
+  #     - identity
+  #   ports:
+  #     - 44359:80
+
+  # frontend:
+  #   build:
+  #     context: .
+  #     dockerfile: src/uis/Frontend/Dockerfile
+  #   ports:
+  #     - 44317:80
+
+  # backend:
+  #   build:
+  #     context: .
+  #     dockerfile: src/uis/Backend/Dockerfile
+  #   ports:
+  #     - 44301:80
+
+  #microservices api sections
+  product.api:
+    image: ${DOCKER_REGISTRY-}product-api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: ../../src/services/Product/Product.API/Dockerfile
+    container_name: product.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "6002:80"
+    networks:
+      - default
+    restart: always
+
+  # customer.api:
+  #   image: ${DOCKER_REGISTRY-}customer-api:${PLATFORM:-linux}-${TAG:-latest}
+  #   build:
+  #     context: .
+  #     dockerfile: ../../src/services/Customer/Customer.API/Dockerfile
+  #   container_name: customer.api
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #     - ASPNETCORE_URLS=http://+:80
+  #   ports:
+  #     - "6003:80"
+  #   restart: always
+
+  # basket.api:
+  #   image: ${DOCKER_REGISTRY-}basket-api:${PLATFORM:-linux}-${TAG:-latest}
+  #   build:
+  #     context: .
+  #     dockerfile: ../../src/services/Basket/Basket.API/Dockerfile
+  #   container_name: basket.api
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #     - ASPNETCORE_URLS=http://+:80
+  #   ports:
+  #     - "6004:80"
+  #   restart: always
+
+  # ordering.api:
+  #   image: ${DOCKER_REGISTRY-}ordering-api:${PLATFORM:-linux}-${TAG:-latest}
+  #   build:
+  #     context: .
+  #     dockerfile: ../../src/services/Ordering/Ordering.API/Dockerfile
+  #   container_name: ordering.api
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #     - ASPNETCORE_URLS=http://+:80
+  #   ports:
+  #     - "6005:80"
+  #   restart: always
+
+  # inventory.api:
+  #   image: ${DOCKER_REGISTRY-}inventory-api:${PLATFORM:-linux}-${TAG:-latest}
+  #   build:
+  #     context: .
+  #     dockerfile: ../../src/services/Inventory/Inventory.API/Dockerfile
+  #   container_name: inventory.api
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #     - ASPNETCORE_URLS=http://+:80
+  #   ports:
+  #     - "6006:80"
+  #   restart: always
+
+#network section
+networks:
+  default:
+    name: solution-sso-network
+    driver: bridge
+
+
+#volumes section
+
