@@ -57,39 +57,46 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{70
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{A7185190-4883-44FC-AA94-2C0BF90775E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "src\services\Basket\Basket.API\Basket.API.csproj", "{28318278-EC96-49C7-B07F-B2A853DEE65F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API", "src\services\Basket\Basket.API\Basket.API.csproj", "{28318278-EC96-49C7-B07F-B2A853DEE65F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customer", "Customer", "{F1FE0BB8-B6A9-4D62-B999-BBA4468F8DA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.API", "src\services\Customer\Customer.API\Customer.API.csproj", "{FBB33330-B2AA-4E5B-B319-81BDF3DA8B39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.API", "src\services\Customer\Customer.API\Customer.API.csproj", "{FBB33330-B2AA-4E5B-B319-81BDF3DA8B39}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hangfire", "Hangfire", "{26B15995-77E3-422C-A9D9-01783D2B85DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangfire.API", "src\services\Hangfire\Hangfire.API\Hangfire.API.csproj", "{4C3F9104-4F61-4030-BAB6-3FCE69DA450A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hangfire.API", "src\services\Hangfire\Hangfire.API\Hangfire.API.csproj", "{4C3F9104-4F61-4030-BAB6-3FCE69DA450A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inventory", "Inventory", "{49E2EBBC-9AB5-4C7A-AA9A-032E5B60D25B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory.API", "src\services\Inventory\Inventory.API\Inventory.API.csproj", "{058A3969-0137-4259-939A-ABD6A44C5919}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory.API", "src\services\Inventory\Inventory.API\Inventory.API.csproj", "{058A3969-0137-4259-939A-ABD6A44C5919}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{07BB5028-F92F-4F0A-8B57-FC330CCBA17D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.API", "src\services\Ordering\Ordering.API\Ordering.API.csproj", "{121F1B76-8CF6-4FB3-BB44-B03FE73D7AAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.API", "src\services\Ordering\Ordering.API\Ordering.API.csproj", "{121F1B76-8CF6-4FB3-BB44-B03FE73D7AAE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{31BCACF8-1A56-49A9-9C95-B3423221F018}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.API", "src\services\Product\Product.API\Product.API.csproj", "{BD482A1B-5CEE-4BEE-8226-6F9D691199CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.API", "src\services\Product\Product.API\Product.API.csproj", "{BD482A1B-5CEE-4BEE-8226-6F9D691199CB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{DBA07622-DA0E-42A0-97F6-A0D796DD1A4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLogging", "src\BuildingBlocks\CommonLogging\CommonLogging.csproj", "{72E2F1CB-6F92-47C8-A217-A20154460B0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLogging", "src\BuildingBlocks\CommonLogging\CommonLogging.csproj", "{72E2F1CB-6F92-47C8-A217-A20154460B0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "src\BuildingBlocks\Contracts\Contracts.csproj", "{96778644-6042-4676-975E-3FE0D6B512E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "src\BuildingBlocks\Contracts\Contracts.csproj", "{96778644-6042-4676-975E-3FE0D6B512E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\BuildingBlocks\Domain\Domain.csproj", "{D4311E8B-91F0-469C-9A8D-B5078FEF44AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\BuildingBlocks\Domain\Domain.csproj", "{D4311E8B-91F0-469C-9A8D-B5078FEF44AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\BuildingBlocks\Infrastructure\Infrastructure.csproj", "{2E6DA137-2475-433D-969F-8062CBC84AC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\BuildingBlocks\Infrastructure\Infrastructure.csproj", "{2E6DA137-2475-433D-969F-8062CBC84AC0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "src\BuildingBlocks\Shared\Shared.csproj", "{61B30688-97EA-42F0-AE3F-CE632B584B64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "src\BuildingBlocks\Shared\Shared.csproj", "{61B30688-97EA-42F0-AE3F-CE632B584B64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "builds", "builds", "{C7DB05C8-0524-4C8B-9A11-80CEF87D2907}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionMicroserviceDemoSample", "SolutionMicroserviceDemoSample", "{C0EF0663-75E1-4EE4-9444-4C184AF847CB}"
+	ProjectSection(SolutionItems) = preProject
+		builds\SolutionMicroserviceDemoSample\docker-compose.yml = builds\SolutionMicroserviceDemoSample\docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -225,6 +232,7 @@ Global
 		{D4311E8B-91F0-469C-9A8D-B5078FEF44AA} = {DBA07622-DA0E-42A0-97F6-A0D796DD1A4D}
 		{2E6DA137-2475-433D-969F-8062CBC84AC0} = {DBA07622-DA0E-42A0-97F6-A0D796DD1A4D}
 		{61B30688-97EA-42F0-AE3F-CE632B584B64} = {DBA07622-DA0E-42A0-97F6-A0D796DD1A4D}
+		{C0EF0663-75E1-4EE4-9444-4C184AF847CB} = {C7DB05C8-0524-4C8B-9A11-80CEF87D2907}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F89C23B-F2C3-4A6C-87EA-42BAC92EC09F}
