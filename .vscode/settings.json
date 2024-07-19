@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula Theme",
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.iconTheme": "vscode-icons",
   "git.autofetch": true,
