@@ -12,14 +12,14 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/services/Product/Product.API/Product.API.csproj", "src/services/Product/Product.API/"]
-COPY ["src/BuildingBlocks/Infrastructure/Infrastructure.csproj", "src/BuildingBlocks/Infrastructure/"]
-COPY ["src/BuildingBlocks/Shared/Shared.csproj", "src/BuildingBlocks/Shared/"]
-COPY ["src/BuildingBlocks/Contracts/Contracts.csproj", "src/BuildingBlocks/Contracts/"]
-COPY ["src/BuildingBlocks/CommonLogging/CommonLogging.csproj", "src/BuildingBlocks/CommonLogging/"]
-RUN dotnet restore "./src/services/Product/Product.API/Product.API.csproj"
+COPY ["services/Product/Product.API/Product.API.csproj", "services/Product/Product.API/"]
+COPY ["services/BuildingBlocks/Infrastructure/Infrastructure.csproj", "BuildingBlocks/Infrastructure/"]
+COPY ["Shared/Shared.csproj", "BuildingBlocks/Shared/"]
+COPY ["Contracts/Contracts.csproj", "BuildingBlocks/Contracts/"]
+COPY ["CommonLogging/CommonLogging.csproj", "BuildingBlocks/CommonLogging/"]
+RUN dotnet restore "services/Product/Product.API/Product.API.csproj"
 COPY . .
-WORKDIR "/src/src/services/Product/Product.API"
+WORKDIR "/src/services/Product/Product.API"
 RUN dotnet build "./Product.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
@@ -32,3 +32,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Product.API.dll"]
+
