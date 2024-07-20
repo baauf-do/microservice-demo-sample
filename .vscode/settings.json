@@ -62,6 +62,7 @@
     "Datetime",
     "Hmac",
     "Newtonsoft",
+    "ngang",
     "Serilog",
     "Serilogger",
     "weatherforecast"
