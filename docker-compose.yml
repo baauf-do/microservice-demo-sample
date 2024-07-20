@@ -71,12 +71,12 @@ services:
   #     - 44301:80
 
   #microservices api sections
-  product.api:
-    image: ${DOCKER_REGISTRY-}product-api:${PLATFORM:-linux}-${TAG:-latest}
+  example.product.api:
+    image: ${DOCKER_REGISTRY-}example-product-api:${PLATFORM:-linux}-${TAG:-latest}
     build:
       context: .
-      dockerfile: services/Product/Product.API/Dockerfile
-    container_name: product.api
+      dockerfile: src/services/Product/Product.API/Dockerfile
+    container_name: example.product.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
@@ -86,57 +86,57 @@ services:
       - default
     restart: always
 
-  # customer.api:
-  #   image: ${DOCKER_REGISTRY-}customer-api:${PLATFORM:-linux}-${TAG:-latest}
-  #   build:
-  #     context: .
-  #     dockerfile: ../../src/services/Customer/Customer.API/Dockerfile
-  #   container_name: customer.api
-  #   environment:
-  #     - ASPNETCORE_ENVIRONMENT=Development
-  #     - ASPNETCORE_URLS=http://+:80
-  #   ports:
-  #     - "6003:80"
-  #   restart: always
+  example.customer.api:
+    image: ${DOCKER_REGISTRY-}example-customer-api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/services/Customer/Customer.API/Dockerfile
+    container_name: example.customer.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "6003:80"
+    restart: always
 
-  # basket.api:
-  #   image: ${DOCKER_REGISTRY-}basket-api:${PLATFORM:-linux}-${TAG:-latest}
-  #   build:
-  #     context: .
-  #     dockerfile: ../../src/services/Basket/Basket.API/Dockerfile
-  #   container_name: basket.api
-  #   environment:
-  #     - ASPNETCORE_ENVIRONMENT=Development
-  #     - ASPNETCORE_URLS=http://+:80
-  #   ports:
-  #     - "6004:80"
-  #   restart: always
+  example.basket.api:
+    image: ${DOCKER_REGISTRY-}example-basket-api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/services/Basket/Basket.API/Dockerfile
+    container_name: example.basket.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "6004:80"
+    restart: always
 
-  # ordering.api:
-  #   image: ${DOCKER_REGISTRY-}ordering-api:${PLATFORM:-linux}-${TAG:-latest}
-  #   build:
-  #     context: .
-  #     dockerfile: ../../src/services/Ordering/Ordering.API/Dockerfile
-  #   container_name: ordering.api
-  #   environment:
-  #     - ASPNETCORE_ENVIRONMENT=Development
-  #     - ASPNETCORE_URLS=http://+:80
-  #   ports:
-  #     - "6005:80"
-  #   restart: always
+  example.ordering.api:
+    image: ${DOCKER_REGISTRY-}example-ordering-api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/services/Ordering/Ordering.API/Dockerfile
+    container_name: example.ordering.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "6005:80"
+    restart: always
 
-  # inventory.api:
-  #   image: ${DOCKER_REGISTRY-}inventory-api:${PLATFORM:-linux}-${TAG:-latest}
-  #   build:
-  #     context: .
-  #     dockerfile: ../../src/services/Inventory/Inventory.API/Dockerfile
-  #   container_name: inventory.api
-  #   environment:
-  #     - ASPNETCORE_ENVIRONMENT=Development
-  #     - ASPNETCORE_URLS=http://+:80
-  #   ports:
-  #     - "6006:80"
-  #   restart: always
+  example.inventory.api:
+    image: ${DOCKER_REGISTRY-}example-inventory-api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/services/Inventory/Inventory.API/Dockerfile
+    container_name: example.inventory.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "6006:80"
+    restart: always
 
 #network section
 networks:
