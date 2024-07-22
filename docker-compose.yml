@@ -71,12 +71,12 @@ services:
   #     - 44301:80
 
   #microservices api sections
-  example.product.api:
-    image: ${DOCKER_REGISTRY-}example-product-api:${PLATFORM:-linux}-${TAG:-latest}
+  sample.product.api:
+    image: ${DOCKER_REGISTRY-}sample-product-api:${PLATFORM:-linux}-${TAG:-latest}
     build:
       context: .
       dockerfile: src/services/Product/Product.API/Dockerfile
-    container_name: example.product.api
+    container_name: sample.product.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
@@ -86,12 +86,12 @@ services:
       - default
     restart: always
 
-  example.customer.api:
-    image: ${DOCKER_REGISTRY-}example-customer-api:${PLATFORM:-linux}-${TAG:-latest}
+  sample.customer.api:
+    image: ${DOCKER_REGISTRY-}sample-customer-api:${PLATFORM:-linux}-${TAG:-latest}
     build:
       context: .
       dockerfile: src/services/Customer/Customer.API/Dockerfile
-    container_name: example.customer.api
+    container_name: sample.customer.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
@@ -99,12 +99,12 @@ services:
       - "6003:80"
     restart: always
 
-  example.basket.api:
-    image: ${DOCKER_REGISTRY-}example-basket-api:${PLATFORM:-linux}-${TAG:-latest}
+  sample.basket.api:
+    image: ${DOCKER_REGISTRY-}sample-basket-api:${PLATFORM:-linux}-${TAG:-latest}
     build:
       context: .
       dockerfile: src/services/Basket/Basket.API/Dockerfile
-    container_name: example.basket.api
+    container_name: sample.basket.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
@@ -112,12 +112,12 @@ services:
       - "6004:80"
     restart: always
 
-  example.ordering.api:
-    image: ${DOCKER_REGISTRY-}example-ordering-api:${PLATFORM:-linux}-${TAG:-latest}
+  sample.ordering.api:
+    image: ${DOCKER_REGISTRY-}sample-ordering-api:${PLATFORM:-linux}-${TAG:-latest}
     build:
       context: .
       dockerfile: src/services/Ordering/Ordering.API/Dockerfile
-    container_name: example.ordering.api
+    container_name: sample.ordering.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
@@ -125,12 +125,12 @@ services:
       - "6005:80"
     restart: always
 
-  example.inventory.api:
-    image: ${DOCKER_REGISTRY-}example-inventory-api:${PLATFORM:-linux}-${TAG:-latest}
+  sample.inventory.api:
+    image: ${DOCKER_REGISTRY-}sample-inventory-api:${PLATFORM:-linux}-${TAG:-latest}
     build:
       context: .
       dockerfile: src/services/Inventory/Inventory.API/Dockerfile
-    container_name: example.inventory.api
+    container_name: sample.inventory.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:80
