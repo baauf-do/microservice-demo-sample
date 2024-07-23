@@ -1,5 +1,6 @@
 using Infrastructure.Middlewares;
 using Microsoft.AspNetCore.HttpOverrides;
+using Infrastructure.Identity;
 
 namespace Product.API.Extensions
 {
@@ -21,9 +22,11 @@ namespace Product.API.Extensions
             builder.Services.ConfigureAddInfrastructureServices();
             builder.Host.ConfigureSerilog(builder);
 
-            builder.Services.ConfigureAddJwtAuthentication();
+            //builder.Services.ConfigureAddJwtAuthentication();
+            builder.Services.ConfigureAuthenticationHandler();
+            builder.Services.ConfigureAuthorizationHandler();
             // definition swagger
-            builder.Services.ConfigureSwagger();
+            builder.Services.ConfigureSwagger(builder.Configuration);
 
             return builder.Build();
         }
@@ -47,7 +50,8 @@ namespace Product.API.Extensions
             app.UseSwaggerUI(c =>
             {
                 var config = app.Configuration;
-                c.OAuthClientId(config["ClientId"]);
+                var getClientId = config["ClientId"];
+                c.OAuthClientId(getClientId);
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{app.Environment.ApplicationName} v1");
                 c.DisplayRequestDuration();
             });
