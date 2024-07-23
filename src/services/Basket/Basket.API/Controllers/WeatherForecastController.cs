@@ -4,7 +4,7 @@ using Basket.API.Models;
 namespace Basket.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/basket/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

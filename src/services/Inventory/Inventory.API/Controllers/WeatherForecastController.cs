@@ -4,7 +4,7 @@ using Hangfire.API.Models;
 namespace Hangfire.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/inventory/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

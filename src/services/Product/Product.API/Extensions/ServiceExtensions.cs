@@ -10,6 +10,7 @@ using Infrastructure.Identity;
 using Serilog;
 using Serilog.Events;
 using CommonLogging;
+using Microsoft.OpenApi.Models;
 
 namespace Product.API.Extensions
 {
@@ -82,6 +83,8 @@ namespace Product.API.Extensions
                 .Get<JwtSettings>();
             if (jwtSettings != null) services.AddSingleton(jwtSettings);
 
+            // Database
+
             // ApiConfiguration
             var apiConfiguration = configuration.GetSection(nameof(ApiConfiguration))
                 .Get<ApiConfiguration>();
@@ -94,10 +97,73 @@ namespace Product.API.Extensions
         /// </summary>
         /// <param name="services"></param>
         /// <param name="configuration"></param>
-        public static void ConfigureSwagger(this IServiceCollection services)
+        public static void ConfigureSwagger(this IServiceCollection services, IConfiguration configurations)
         {
             services.AddEndpointsApiExplorer();
-            services.AddSwaggerGen();
+            //services.AddSwaggerGen();
+
+            // lay dia chi cua server: vd: http://localhost:5901/
+            var configuration = configurations.GetSection("IdentityServer:BaseUrl").Value;
+
+            if (string.IsNullOrEmpty(configuration))
+            {
+                var getConfigIdentityServer = services.GetOptions<ApiConfiguration>(nameof(ApiConfiguration));
+
+                configuration = getConfigIdentityServer?.IdentityServerBaseUrl;
+            }
+            services.AddSwaggerGen(c =>
+            {
+                //c.EnableAnnotations();
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Sample Product API",
+                    Version = "v1",
+                    // Contact = new OpenApiContact
+                    // {
+                    //     Name = "Sample Product API",
+                    //     Email = "gacdemxuan@gmail.com",
+                    //     Url = new Uri("https://...com")
+                    // }
+                });
+
+
+                // config authorization
+                c.AddSecurityDefinition(name: JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
+                {
+                    Type = SecuritySchemeType.OAuth2,
+                    Flows = new OpenApiOAuthFlows
+                    {
+                        Implicit = new OpenApiOAuthFlow
+                        {
+                            AuthorizationUrl = new Uri($"{configuration}/connect/authorize"),
+                            Scopes = new Dictionary<string, string>
+                            {
+                                { "tedu_microservice_api.read", "IDP API Read your data (Scope)" },
+                                { "tedu_microservice_api.write", "IDP API Write your data (Scope)" }
+                            }
+                        }
+                    }
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = JwtBearerDefaults.AuthenticationScheme
+                            }
+                        },
+                        new List<string>
+                        {
+                            /// this list is scope list
+                            "tedu_microservice_api.read",
+                            "tedu_microservice_api.write"
+                        }
+                    }
+                });
+            });
         }
 
         /// <summary>
@@ -219,5 +285,7 @@ namespace Product.API.Extensions
 
             return services;
         }
+
+
     }
 }

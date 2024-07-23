@@ -6,7 +6,7 @@ using Shared.DTOs.Identity;
 namespace Product.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/product/[controller]")]
     public class TokenController : ControllerBase
     {
         private readonly ITokenService _tokenService;
