@@ -4,7 +4,7 @@ using Ordering.API.Models;
 namespace Ordering.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/ordering/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

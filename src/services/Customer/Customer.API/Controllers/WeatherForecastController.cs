@@ -4,7 +4,7 @@ using Customer.API.Models;
 namespace Customer.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/customer/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

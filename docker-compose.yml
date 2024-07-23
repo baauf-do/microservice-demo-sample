@@ -72,7 +72,7 @@ services:
 
   #microservices api sections
   sample.product.api:
-    image: ${DOCKER_REGISTRY-}sample-product-api:${PLATFORM:-linux}-${TAG:-latest}
+    image: ${DOCKER_REGISTRY-}sample-product-api:${PLATFORM:-}${PLATFORM_SERVICE}-${TAG:-}${PRODUCT_VERSION_BUILD}
     build:
       context: .
       dockerfile: src/services/Product/Product.API/Dockerfile
@@ -87,7 +87,7 @@ services:
     restart: always
 
   sample.customer.api:
-    image: ${DOCKER_REGISTRY-}sample-customer-api:${PLATFORM:-linux}-${TAG:-latest}
+    image: ${DOCKER_REGISTRY-}sample-customer-api:${PLATFORM:-}${PLATFORM_SERVICE}-${TAG:-}${CUSTOMER_VERSION_BUILD}
     build:
       context: .
       dockerfile: src/services/Customer/Customer.API/Dockerfile
@@ -100,7 +100,7 @@ services:
     restart: always
 
   sample.basket.api:
-    image: ${DOCKER_REGISTRY-}sample-basket-api:${PLATFORM:-linux}-${TAG:-latest}
+    image: ${DOCKER_REGISTRY-}sample-basket-api:${PLATFORM:-}${PLATFORM_SERVICE}-${TAG:-}${BASKET_VERSION_BUILD}
     build:
       context: .
       dockerfile: src/services/Basket/Basket.API/Dockerfile
@@ -113,7 +113,7 @@ services:
     restart: always
 
   sample.ordering.api:
-    image: ${DOCKER_REGISTRY-}sample-ordering-api:${PLATFORM:-linux}-${TAG:-latest}
+    image: ${DOCKER_REGISTRY-}sample-ordering-api:${PLATFORM:-}${PLATFORM_SERVICE}-${TAG:-}${ORDERING_VERSION_BUILD}
     build:
       context: .
       dockerfile: src/services/Ordering/Ordering.API/Dockerfile
@@ -126,7 +126,7 @@ services:
     restart: always
 
   sample.inventory.api:
-    image: ${DOCKER_REGISTRY-}sample-inventory-api:${PLATFORM:-linux}-${TAG:-latest}
+    image: ${DOCKER_REGISTRY-}sample-inventory-api:${PLATFORM:-}${PLATFORM_SERVICE}-${TAG:-}${INVENTORY_VERSION_BUILD}
     build:
       context: .
       dockerfile: src/services/Inventory/Inventory.API/Dockerfile
@@ -141,7 +141,7 @@ services:
 #network section
 networks:
   default:
-    name: solution-sso-network
+    name: local-docker-network
     driver: bridge
 
 

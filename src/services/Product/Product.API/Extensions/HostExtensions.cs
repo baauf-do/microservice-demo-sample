@@ -46,7 +46,10 @@ namespace Product.API.Extensions
             // Config swagger
             app.UseSwaggerUI(c =>
             {
+                var config = app.Configuration;
+                c.OAuthClientId(config["ClientId"]);
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{app.Environment.ApplicationName} v1");
+                c.DisplayRequestDuration();
             });
 
             app.UseForwardedHeaders(new ForwardedHeadersOptions
