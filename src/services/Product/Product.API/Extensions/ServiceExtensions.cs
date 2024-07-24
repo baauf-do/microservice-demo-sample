@@ -138,8 +138,8 @@ namespace Product.API.Extensions
                             AuthorizationUrl = new Uri($"{configuration}/connect/authorize"),
                             Scopes = new Dictionary<string, string>
                             {
-                                { "tedu_microservice_api.read", "IDP API Read your data (Scope)" },
-                                { "tedu_microservice_api.write", "IDP API Write your data (Scope)" }
+                                { "tedu_microservices_api.read", "IDP API Read your data (Scope)" },
+                                { "tedu_microservices_api.write", "IDP API Write your data (Scope)" }
                             }
                         }
                     }
@@ -158,8 +158,8 @@ namespace Product.API.Extensions
                         new List<string>
                         {
                             /// this list is scope list
-                            "tedu_microservice_api.read",
-                            "tedu_microservice_api.write"
+                            "tedu_microservices_api.read",
+                            "tedu_microservices_api.write"
                         }
                     }
                 });
