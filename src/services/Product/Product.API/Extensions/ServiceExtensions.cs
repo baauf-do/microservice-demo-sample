@@ -11,6 +11,7 @@ using Serilog;
 using Serilog.Events;
 using CommonLogging;
 using Microsoft.OpenApi.Models;
+using Examination.API.Filters;
 
 namespace Product.API.Extensions
 {
@@ -128,14 +129,17 @@ namespace Product.API.Extensions
 
 
                 // config authorization
-                c.AddSecurityDefinition(name: JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
+                //c.AddSecurityDefinition(name: JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
+                c.AddSecurityDefinition(name: "oauth2", new OpenApiSecurityScheme()
                 {
                     Type = SecuritySchemeType.OAuth2,
-                    Flows = new OpenApiOAuthFlows
+                    Flows = new OpenApiOAuthFlows()
                     {
                         Implicit = new OpenApiOAuthFlow
                         {
+                            //AuthorizationUrl = new Uri($"{configuration}/connect/authorize"),
                             AuthorizationUrl = new Uri($"{configuration}/connect/authorize"),
+                            TokenUrl = new Uri($"{configuration}/connect/token"),
                             Scopes = new Dictionary<string, string>
                             {
                                 { "tedu_microservices_api.read", "IDP API Read your data (Scope)" },
@@ -144,25 +148,26 @@ namespace Product.API.Extensions
                         }
                     }
                 });
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = JwtBearerDefaults.AuthenticationScheme
-                            }
-                        },
-                        new List<string>
-                        {
-                            /// this list is scope list
-                            "tedu_microservices_api.read",
-                            "tedu_microservices_api.write"
-                        }
-                    }
-                });
+                c.OperationFilter<AuthorizeCheckOperationFilter>();
+                // c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                // {
+                //     {
+                //         new OpenApiSecurityScheme
+                //         {
+                //             Reference = new OpenApiReference
+                //             {
+                //                 Type = ReferenceType.SecurityScheme,
+                //                 Id = JwtBearerDefaults.AuthenticationScheme
+                //             }
+                //         },
+                //         new List<string>
+                //         {
+                //             /// this list is scope list
+                //             "tedu_microservices_api.read",
+                //             "tedu_microservices_api.write"
+                //         }
+                //     }
+                // });
             });
         }
 
