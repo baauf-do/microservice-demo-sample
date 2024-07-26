@@ -1,6 +1,20 @@
 #version: "3.9"
 
 services:
+  examination.mongodb.exam.api:
+    container_name: examination.mongodb.exam.api-container
+    image: mongo
+    ports:
+      - '27019:27017'
+    volumes:
+      - examination-volume-data-mongodb-exam-api:/var/lib/mongodb/data
+    networks:
+      - default
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: Admin@123$$
+
   # mongo:
   #   image: mongo
   #   ports:
@@ -146,4 +160,11 @@ networks:
 
 
 #volumes section
+
+volumes:
+  examination-volume-data-mongodb-exam-api:
+    external: false
+    name: examination-volume-data-mongodb-exam-api
+    driver: local
+
 
