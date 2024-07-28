@@ -43,16 +43,16 @@
                     <MudCardContent>
                         <MudGrid>
                             <MudItem xs="12" md="6">
-                                <MudTextField @bind-Value="FirstName" Label="First Name" Variant="Variant.Outlined" />
+                                <MudTextField T="string" T="string" @bind-Value="FirstName" Label="First Name" Variant="Variant.Outlined" />
                             </MudItem>
                             <MudItem xs="12" md="6">
-                                <MudTextField @bind-Value="LastName" Label="First Name" Variant="Variant.Outlined" />
+                                <MudTextField T="string" @bind-Value="LastName" Label="First Name" Variant="Variant.Outlined" />
                             </MudItem>
                             <MudItem xs="12" md="6">
-                                <MudTextField @bind-Value="JobTitle" Label="Job Title" Variant="Variant.Outlined" />
+                                <MudTextField T="string" @bind-Value="JobTitle" Label="Job Title" Variant="Variant.Outlined" />
                             </MudItem>
                             <MudItem xs="12" md="6">
-                                <MudTextField @bind-Value="Email" Label="Email" Variant="Variant.Outlined" HelperText="Dont worry, we shall not spam!" InputType="InputType.Email" />
+                                <MudTextField T="string" @bind-Value="Email" Label="Email" Variant="Variant.Outlined" HelperText="Dont worry, we shall not spam!" InputType="InputType.Email" />
                             </MudItem>
                             <MudItem xs="12">
                                 <MudText>
@@ -61,7 +61,7 @@
                                 <MudText Typo="Typo.body2">
                                     Means that only your friends will be able to see your contact details.
                                 </MudText>
-                                <MudSwitch @bind-Checked="@FriendSwitch" Color="Color.Secondary" />
+                                <MudSwitch @bind-Value="@FriendSwitch" Color="Color.Secondary" />
                             </MudItem>
                         </MudGrid>
                     </MudCardContent>
@@ -89,10 +89,10 @@
                             What type of system notifications you want to recieve to your email.
                         </MudText>
                         <div class="d-flex flex-column mt-6">
-                            <MudCheckBox @bind-Checked="@NotificationEmail_1" Label="Threat Detection" Color="Color.Primary"></MudCheckBox>
-                            <MudCheckBox @bind-Checked="@NotificationEmail_2" Label="Server Errors" Color="Color.Error"></MudCheckBox>
-                            <MudCheckBox @bind-Checked="@NotificationEmail_3" Label="Server Warnings" Color="Color.Warning"></MudCheckBox>
-                            <MudCheckBox @bind-Checked="@NotificationEmail_4" Label="Spam" Color="Color.Success"></MudCheckBox>
+                            <MudCheckBox @bind-Value="@NotificationEmail_1" Label="Threat Detection" Color="Color.Primary"></MudCheckBox>
+                            <MudCheckBox @bind-Value="@NotificationEmail_2" Label="Server Errors" Color="Color.Error"></MudCheckBox>
+                            <MudCheckBox @bind-Value="@NotificationEmail_3" Label="Server Warnings" Color="Color.Warning"></MudCheckBox>
+                            <MudCheckBox @bind-Value="@NotificationEmail_4" Label="Spam" Color="Color.Success"></MudCheckBox>
                         </div>
                     </MudItem>
                     <MudItem xs="12" sm="8">
@@ -103,10 +103,10 @@
                             What type of system notifications you want to recieve in the phone application.
                         </MudText>
                         <div class="d-flex flex-column mt-6">
-                            <MudCheckBox @bind-Checked="@NotificationChat_1" Label="Threat Detection" Color="Color.Primary"></MudCheckBox>
-                            <MudCheckBox @bind-Checked="@NotificationChat_2" Label="Server Errors" Color="Color.Error"></MudCheckBox>
-                            <MudCheckBox @bind-Checked="@NotificationChat_3" Label="Server Warnings" Color="Color.Warning"></MudCheckBox>
-                            <MudCheckBox @bind-Checked="@NotificationChat_4" Label="Spam" Color="Color.Success"></MudCheckBox>
+                            <MudCheckBox @bind-Value="@NotificationChat_1" Label="Threat Detection" Color="Color.Primary"></MudCheckBox>
+                            <MudCheckBox @bind-Value="@NotificationChat_2" Label="Server Errors" Color="Color.Error"></MudCheckBox>
+                            <MudCheckBox @bind-Value="@NotificationChat_3" Label="Server Warnings" Color="Color.Warning"></MudCheckBox>
+                            <MudCheckBox @bind-Value="@NotificationChat_4" Label="Spam" Color="Color.Success"></MudCheckBox>
                         </div>
                     </MudItem>
                 </MudGrid>
@@ -127,13 +127,13 @@
                 <MudCardContent>
                     <MudGrid>
                         <MudItem xs="12" md="6">
-                            <MudTextField T="string" Label="Password" Variant="Variant.Outlined" InputType="InputType.Password" @ref="pwField1" Validation="@(new Func<string, IEnumerable<string>>(PasswordStrength))" Required="true" RequiredError="Password is required!" />
+                            <MudTextField T="string" T="string" Label="Password" Variant="Variant.Outlined" InputType="InputType.Password" @ref="pwField1" Validation="@(new Func<string, IEnumerable<string>>(PasswordStrength))" Required="true" RequiredError="Password is required!" />
                         </MudItem>
                         <MudItem xs="12" md="6">
-                            <MudTextField T="string" Label="Password Confirmation" Variant="Variant.Outlined" InputType="InputType.Password" Validation="@(new Func<string, string>(PasswordMatch))" />
+                            <MudTextField T="string" T="string" Label="Password Confirmation" Variant="Variant.Outlined" InputType="InputType.Password" Validation="@(new Func<string, string>(PasswordMatch))" />
                         </MudItem>
                         <MudItem xs="12">
-                            <MudTextField T="string" Label="Current Password" Variant="Variant.Outlined" InputType="InputType.Password" />
+                            <MudTextField T="string" T="string" Label="Current Password" Variant="Variant.Outlined" InputType="InputType.Password" />
                         </MudItem>
                     </MudGrid>
                 </MudCardContent>
