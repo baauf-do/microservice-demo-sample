@@ -100,17 +100,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionMicroserviceDemoSam
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examination", "Examination", "{DA37B949-8C65-4F8A-BEAC-891828C3BB68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examination.API", "src\services\Examination\Examination.API\Examination.API.csproj", "{47970E2C-67FB-4EF5-9CB5-FFEA060EC57D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examination.API", "src\services\Examination\Examination.API\Examination.API.csproj", "{47970E2C-67FB-4EF5-9CB5-FFEA060EC57D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{691E1A2B-5B6F-4AC5-B3F2-43CF160CD2F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminApp", "src\web\AdminApp\AdminApp.csproj", "{7B1F63AE-95F0-4994-89C6-C4367EE3F9E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminApp", "src\web\AdminApp\AdminApp.csproj", "{7B1F63AE-95F0-4994-89C6-C4367EE3F9E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examination.Application", "src\services\Examination\Examination.Application\Examination.Application.csproj", "{72A75250-B24A-473E-B694-E673388A2A1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examination.Application", "src\services\Examination\Examination.Application\Examination.Application.csproj", "{72A75250-B24A-473E-B694-E673388A2A1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examination.Domain", "src\services\Examination\Examination.Domain\Examination.Domain.csproj", "{78D65FAC-34FA-4C78-B1A5-51C90D742BA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examination.Domain", "src\services\Examination\Examination.Domain\Examination.Domain.csproj", "{78D65FAC-34FA-4C78-B1A5-51C90D742BA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examination.Infrastructure", "src\services\Examination\Examination.Infrastructure\Examination.Infrastructure.csproj", "{42B4E717-773A-4DF1-93F6-9FE92B3672A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examination.Infrastructure", "src\services\Examination\Examination.Infrastructure\Examination.Infrastructure.csproj", "{42B4E717-773A-4DF1-93F6-9FE92B3672A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examination.Dtos", "src\services\Examination\Examination.Dtos\Examination.Dtos.csproj", "{0E4426BA-0CE0-4F40-8031-2E3FB00F97B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -226,6 +228,10 @@ Global
 		{42B4E717-773A-4DF1-93F6-9FE92B3672A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42B4E717-773A-4DF1-93F6-9FE92B3672A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42B4E717-773A-4DF1-93F6-9FE92B3672A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E4426BA-0CE0-4F40-8031-2E3FB00F97B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E4426BA-0CE0-4F40-8031-2E3FB00F97B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E4426BA-0CE0-4F40-8031-2E3FB00F97B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E4426BA-0CE0-4F40-8031-2E3FB00F97B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -274,6 +280,7 @@ Global
 		{72A75250-B24A-473E-B694-E673388A2A1E} = {DA37B949-8C65-4F8A-BEAC-891828C3BB68}
 		{78D65FAC-34FA-4C78-B1A5-51C90D742BA3} = {DA37B949-8C65-4F8A-BEAC-891828C3BB68}
 		{42B4E717-773A-4DF1-93F6-9FE92B3672A6} = {DA37B949-8C65-4F8A-BEAC-891828C3BB68}
+		{0E4426BA-0CE0-4F40-8031-2E3FB00F97B2} = {DA37B949-8C65-4F8A-BEAC-891828C3BB68}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F89C23B-F2C3-4A6C-87EA-42BAC92EC09F}

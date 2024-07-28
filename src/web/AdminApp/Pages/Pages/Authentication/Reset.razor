@@ -1,12 +1,9 @@
 ﻿@page "/pages/authentication/reset-password"
 @layout LoginLayout
 
-
-
-
     <MudText Typo="Typo.h4" GutterBottom="true">Set new password</MudText>
 
-    <MudTextField @bind-Value="@Password" Label="New Password" Variant="Variant.Outlined" InputType="@PasswordInput" Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="TogglePasswordVisibility" Class="my-4" />
+    <MudTextField T="string" @bind-Value="@Password" Label="New Password" Variant="Variant.Outlined" InputType="@PasswordInput" Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="TogglePasswordVisibility" Class="my-4" />
 
     <MudButton Variant="Variant.Filled" Color="Color.Primary" Link="/pages/authentication/login" Size="Size.Large" FullWidth="true" Class="mt-2">Set New Password</MudButton>
 
