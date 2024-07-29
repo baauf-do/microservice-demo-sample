@@ -40,7 +40,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.associations": {
-    ".eslintrc.cjs": "javascript"
+    ".eslintrc.cjs": "javascript",
+    "*.*proj": "xml",
+    "*.props": "xml",
+    "*.targets": "xml",
+    "*.tasks": "xml"
   },
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
@@ -53,9 +57,18 @@
     "javascriptreact",
     "html"
   ],
+  "emmet.includeLanguages": {
+    "aspnetcorerazor": "html",
+    "razor": "html",
+    "*.cshtml": "html"
+  },
+  "razor.devmode": true,
   "dotnet.defaultSolution": "store.sln",
   "cSpell.words": [
     "additionalfields",
+    "adipisci",
+    "amet",
+    "apiauth",
     "apigw",
     "Appbar",
     "appsettings",
@@ -63,11 +76,14 @@
     "AVERYTOPSECRET",
     "bien",
     "Blazor",
+    "Blazored",
     "Bson",
     "chinh",
     "clean",
+    "consectetur",
     "creditcard",
     "Datetime",
+    "dolorem",
     "Dtos",
     "equalto",
     "fileextensions",
@@ -78,9 +94,12 @@
     "mimtype",
     "mongoadmin",
     "Mudblazor",
+    "Neque",
     "Newtonsoft",
     "ngang",
     "nonalphamin",
+    "porro",
+    "quisquam",
     "rangelength",
     "Serilog",
     "Serilogger",
@@ -89,6 +108,7 @@
     "thuc",
     "v'VVV",
     "valmsg",
+    "velit",
     "weatherforecast"
   ],
   "dotnet.preferRuntimeFromSDK": true,
