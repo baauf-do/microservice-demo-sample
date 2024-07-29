@@ -1,12 +1,10 @@
 ﻿using AdminApp.Models;
 using IdentityModel.Client;
-using System.Threading.Tasks;
 
-namespace AdminApp.Services.Interfaces
+namespace AdminApp.Services.Interfaces;
+
+public interface IAuthService
 {
-    public interface IAuthService
-    {
-        Task<TokenResponse> Login(LoginRequest loginRequest);
-        Task Logout();
-    }
+    Task<TokenResponse> Login(LoginRequest loginRequest);
+    Task Logout();
 }

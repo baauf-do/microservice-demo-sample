@@ -1,6 +1,6 @@
 ﻿@using AdminApp.Models
 
-<MudList T="string" Clickable="true">
+<MudList T="string">
     <MudListSubheader Class="ml-n2 mb-n4"><b>CORE TEAM - 2</b></MudListSubheader>
     @foreach (var user in chatUsers.Where(x => x.UserRoleColor == Colors.DeepPurple.Accent4))
     {

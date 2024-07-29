@@ -5,7 +5,7 @@
 
     <MudTextField T="string" @bind-Value="@Password" Label="New Password" Variant="Variant.Outlined" InputType="@PasswordInput" Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="TogglePasswordVisibility" Class="my-4" />
 
-    <MudButton Variant="Variant.Filled" Color="Color.Primary" Link="/pages/authentication/login" Size="Size.Large" FullWidth="true" Class="mt-2">Set New Password</MudButton>
+    <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/pages/authentication/login" Size="Size.Large" FullWidth="true" Class="mt-2">Set New Password</MudButton>
 
 @code {
     string Password { get; set; } = "";

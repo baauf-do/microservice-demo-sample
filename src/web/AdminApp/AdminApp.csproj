@@ -2,9 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-     <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings> 
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <!-- <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <MudAllowedAttributePattern>LowerCase</MudAllowedAttributePattern>
+  </PropertyGroup> -->
 
   <ItemGroup>
     <PackageReference Include="Blazored.SessionStorage" Version="2.4.0" />

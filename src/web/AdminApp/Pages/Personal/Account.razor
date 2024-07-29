@@ -17,10 +17,14 @@
                     </MudCardHeader>
                     <MudCardContent>
                         <div class="d-flex justify-center mb-4">
-                            <MudAvatar Image="@AvatarImageLink" Style="height:100px; width:100px;">
+                            <MudAvatar Style="height:100px; width:100px;">
                                 @if(AvatarImageLink == null)
                                 {
                                     <MudIcon Icon="@AvatarIcon" Size="Size.Large"></MudIcon>
+                                }
+                                else
+                                {
+                                    <MudImage Src="@AvatarImageLink"/>
                                 }
                             </MudAvatar>
 
@@ -43,7 +47,7 @@
                     <MudCardContent>
                         <MudGrid>
                             <MudItem xs="12" md="6">
-                                <MudTextField T="string" T="string" @bind-Value="FirstName" Label="First Name" Variant="Variant.Outlined" />
+                                <MudTextField T="string" @bind-Value="FirstName" Label="First Name" Variant="Variant.Outlined" />
                             </MudItem>
                             <MudItem xs="12" md="6">
                                 <MudTextField T="string" @bind-Value="LastName" Label="First Name" Variant="Variant.Outlined" />
@@ -127,13 +131,13 @@
                 <MudCardContent>
                     <MudGrid>
                         <MudItem xs="12" md="6">
-                            <MudTextField T="string" T="string" Label="Password" Variant="Variant.Outlined" InputType="InputType.Password" @ref="pwField1" Validation="@(new Func<string, IEnumerable<string>>(PasswordStrength))" Required="true" RequiredError="Password is required!" />
+                            <MudTextField T="string" Label="Password" Variant="Variant.Outlined" InputType="InputType.Password" @ref="pwField1" Validation="@(new Func<string, IEnumerable<string>>(PasswordStrength))" Required="true" RequiredError="Password is required!" />
                         </MudItem>
                         <MudItem xs="12" md="6">
-                            <MudTextField T="string" T="string" Label="Password Confirmation" Variant="Variant.Outlined" InputType="InputType.Password" Validation="@(new Func<string, string>(PasswordMatch))" />
+                            <MudTextField T="string" Label="Password Confirmation" Variant="Variant.Outlined" InputType="InputType.Password" Validation="@(new Func<string, string>(PasswordMatch))" />
                         </MudItem>
                         <MudItem xs="12">
-                            <MudTextField T="string" T="string" Label="Current Password" Variant="Variant.Outlined" InputType="InputType.Password" />
+                            <MudTextField T="string" Label="Current Password" Variant="Variant.Outlined" InputType="InputType.Password" />
                         </MudItem>
                     </MudGrid>
                 </MudCardContent>
@@ -146,7 +150,7 @@
 </MudTabs>
 
 @code {
-    public string AvatarImageLink { get; set; } = "images/avatar_jonny.jpg";
+    public string AvatarImageLink { get; set; } = "images/avatar-default-user.jpg";
     public string AvatarIcon { get; set; } = string.Empty;
     public string AvatarButtonText { get; set; } = "Delete Picture";
     public Color AvatarButtonColor { get; set; } = Color.Error;

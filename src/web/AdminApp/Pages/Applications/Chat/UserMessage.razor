@@ -4,7 +4,9 @@
     <div class="mr-4">
         @if (!String.IsNullOrEmpty(ChatUser.AvatarUrl))
         {
-            <MudAvatar Image="@ChatUser.AvatarUrl" />
+            <MudAvatar>
+                <MudImage Src="@ChatUser.AvatarUrl" />
+            </MudAvatar>
         }
         else
         {

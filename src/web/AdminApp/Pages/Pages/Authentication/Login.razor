@@ -13,7 +13,7 @@
     {
         <MudText Color="@Color.Error">@errorMsg</MudText>
     }
-    <MudTextField T="string" T="string"  @bind-Value="model.UserName" Label="E-mail" Variant="Variant.Outlined" Class="my-6"></MudTextField>
+    <MudTextField T="string"  @bind-Value="model.UserName" Label="E-mail" Variant="Variant.Outlined" Class="my-6"></MudTextField>
 
     <MudTextField T="string" @bind-Value="@model.Password" Label="Password" Variant="Variant.Outlined" InputType="@PasswordInput" Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="TogglePasswordVisibility" />
 

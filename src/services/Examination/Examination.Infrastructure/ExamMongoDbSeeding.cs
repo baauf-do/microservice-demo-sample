@@ -19,7 +19,7 @@ namespace Examination.Infrastructure
     public class ExamMongoDbSeeding
     {
         public async Task SeedAsync(IMongoClient mongoClient, IOptions<ExamSettings> settings,
-               ILogger<ExamMongoDbSeeding> logger)
+                ILogger<ExamMongoDbSeeding> logger)
         {
             var policy = CreatePolicy(logger, nameof(ExamMongoDbSeeding));
             await policy.ExecuteAsync(async () =>
@@ -66,7 +66,7 @@ namespace Examination.Infrastructure
                     TimeSpan.FromMinutes(10),
                     GetPredefinedQuestions(categoryId1).Take(5),
                     Level.Easy,
-                    null,
+                    string.Empty,
                     4,
                     true),
                 new Exam("Exam 2", "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
@@ -75,7 +75,7 @@ namespace Examination.Infrastructure
                     TimeSpan.FromMinutes(5),
                     GetPredefinedQuestions(categoryId1).Skip(5).Take(5),
                     Level.Medium,
-                    null,
+                    string.Empty,
                     4,
                     true),
             };

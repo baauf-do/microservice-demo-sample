@@ -74,7 +74,9 @@
                             <tr>
                                 <td>
                                     <div class="d-flex flex-row">
-                                        <MudAvatar Image="@report.Avatar" Class="mud-elevation-25" />
+                                        <MudAvatar Class="mud-elevation-25" >
+                                            <MudImage Src="@report.Avatar" />
+                                        </MudAvatar>
                                         <div class="ml-6">
                                             <MudText Typo="Typo.subtitle2">@report.Name</MudText>
                                             <MudText Typo="Typo.body2">@report.Title</MudText>
@@ -103,7 +105,7 @@
                 </CardHeaderContent>
             </MudCardHeader>
             <MudCardContent Class="px-0">
-                <MudList T="string" Clickable="true">
+                <MudList T="string">
                     <MudListItem>
                         <div class="d-flex flex-row">
                             <MudAvatar Class="mud-elevation-25">

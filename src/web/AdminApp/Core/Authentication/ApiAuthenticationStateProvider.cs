@@ -63,24 +63,24 @@ namespace AdminApp.Core.Authentication
 
             if (roles != null)
             {
-                if (roles.ToString().Trim().StartsWith("["))
+                if (roles.ToString()!.Trim().StartsWith("["))
                 {
-                    var parsedRoles = JsonSerializer.Deserialize<string[]>(roles.ToString());
+                    var parsedRoles = JsonSerializer.Deserialize<string[]>(roles.ToString()!);
 
-                    foreach (var parsedRole in parsedRoles)
+                    foreach (var parsedRole in parsedRoles!)
                     {
                         claims.Add(new Claim(ClaimTypes.Role, parsedRole));
                     }
                 }
                 else
                 {
-                    claims.Add(new Claim(ClaimTypes.Role, roles.ToString()));
+                    claims.Add(new Claim(ClaimTypes.Role, roles.ToString()!));
                 }
 
                 keyValuePairs.Remove(ClaimTypes.Role);
             }
 
-            claims.AddRange(keyValuePairs.Select(kvp => new Claim(kvp.Key, kvp.Value.ToString())));
+            claims.AddRange(keyValuePairs.Select(kvp => new Claim(kvp.Key, kvp.Value.ToString()!)));
 
             return claims;
         }
